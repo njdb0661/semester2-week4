@@ -14,10 +14,13 @@ int main( int argc, char **argv ) {
 
     // process the command-line data using appropriate string functions
         strcpy(buffer,argv[1]);
-        strcat(buffer,"-");
-        strcat(buffer,argv[2]);
-        strcat(buffer,"-");
-        strcat(buffer,argv[3]);
+
+        int i;
+
+        for(i=2; i< argc; i++) {
+            strcat(buffer,"-");
+            strcat(buffer,argv[i]);
+        }
 
     printf("%s\n",buffer);
 
